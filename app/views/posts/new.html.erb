@@ -1,0 +1,12 @@
+<h1>Ｍａｋｅ Ｎｅｗ Ｐｏｓｔ<h1><br>
+
+<%= form_for :post, url:posts_path do |f|%>
+<%=f.label :image%>  <i class="fas fa-image"></i>:
+<%=f.file_field :image%><br>
+
+<%= f.label :description%>: <br>
+<%=f.text_area :description%><br>
+
+<%=f.submit%>
+
+<%end%>
