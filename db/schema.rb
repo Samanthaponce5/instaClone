@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_13_031501) do
+ActiveRecord::Schema.define(version: 2020_04_14_170358) do
 
   create_table "accounts", force: :cascade do |t|
     t.string "first_name"
@@ -43,10 +43,17 @@ ActiveRecord::Schema.define(version: 2020_04_13_031501) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "comments", force: :cascade do |t|
+    t.string "comment"
+    t.integer "account_id"
+    t.integer "post_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "posts", force: :cascade do |t|
     t.string "description"
     t.integer "account_id"
-    t.string "comment_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

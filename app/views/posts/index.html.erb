@@ -1,0 +1,14 @@
+
+<div class="container">
+Testing
+<figure class="image is-128x128">
+<% if @posts %>
+<%@posts.each do |post|%>
+   <p> <%= link_to post.account.username.capitalize, visit_path(post.account_id), class: "text-dark"%></p><br>
+    <%if post.image.attached?%>
+    <%= image_tag url_for(post.image)%>
+    <%end%>
+    <%end%>
+    <%end%>
+    </figure>
+    </div>

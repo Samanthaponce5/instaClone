@@ -3,8 +3,7 @@ class CreatePosts < ActiveRecord::Migration[6.0]
     create_table :posts do |t|
       t.string :description
       t.integer :account_id
-      t.string :comment_id
-
+    
       t.timestamps
     end
   end

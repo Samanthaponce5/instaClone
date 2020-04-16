@@ -1,0 +1,10 @@
+<div class="container">
+<figure class="image is-128x128">
+<%@posts.each do |post|%>
+    <%if post.image.attached?%>
+    <%= link_to post.account.username, profile_path(post.account.username) %>
+    <%= image_tag url_for(post.image)%>
+    <%end%>
+    <%end%>
+    </figure>
+    </div>

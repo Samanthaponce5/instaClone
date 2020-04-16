@@ -1,5 +1,4 @@
 new post
 
-<%if @post.image.attached? %>
+<p><%= link_to @post.account.username, profile_path(@post.account.username) %></p>
 <%= image_tag url_for(@post.image)%>
-<%end%>

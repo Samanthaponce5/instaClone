@@ -1,0 +1,15 @@
+<p class="border-top mt-3 py-2"><br>
+<div class="card-columns">
+  
+<%@posts.each do |post|%>
+    <div class="card">
+<div class="card-body p-1">
+    <%if post.image.attached?%>
+    <%= link_to post.account.username, profile_path(post.account.username) %>
+    <%= image_tag url_for(post.image), class: 'd-block w-100'%>
+    <%end%>
+    </div>
+    </div>
+  <%end%>
+  </div>
+  </span>

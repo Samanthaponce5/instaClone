@@ -1,6 +1,14 @@
 Rails.application.routes.draw do
+  resources :comments
+  root 'home#index'
+resources :sessions, only: [:new, :create, :destroy]
   resources :posts 
-  resources :accounts
-  #get '/post', to: 'posts#show'
+  resources :accounts,  only: [:index, :create, :new ]
+  get 'signup', to: 'accounts#new', as: 'signup'
+  get 'login', to: 'sessions#new', as: 'login'
+  get 'logout', to: 'sessions#destroy', as: 'logout'
+  get '/:username', to: 'accounts#show', as: :profile
+  get '/visit/:id', to: 'accounts#visit', as: 'visit'
+  # get 'profile', to: 'accounts#show', as: 'profile'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
