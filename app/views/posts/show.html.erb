@@ -1,4 +1,5 @@
 new post
-
-<p><%= link_to @post.account.username, profile_path(@post.account.username) %></p>
-<%= image_tag url_for(@post.image)%>
+<div class="text-center" >
+<p><%= link_to @post.account.username, visit_path(@post.account) %></p>
+<%= image_tag url_for(@post.image),class:"w-50 p-3"%>
+</div>

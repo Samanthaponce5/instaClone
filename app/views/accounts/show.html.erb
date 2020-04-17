@@ -1,15 +1,49 @@
-<p class="border-top mt-3 py-2"><br>
-<div class="card-columns">
-  
-<%@posts.each do |post|%>
-    <div class="card">
-<div class="card-body p-1">
-    <%if post.image.attached?%>
-    <%= link_to post.account.username, profile_path(post.account.username) %>
-    <%= image_tag url_for(post.image), class: 'd-block w-100'%>
-    <%end%>
+<span class="border-0">
+<div class= "container">
+<div class= "row">
+<div class="col-4">
+<%if @account.image.attached?%>
+<%=image_tag url_for(@account.image), width: "200px", class: "rounded-circle", class: "profile-pic"%>
+<%end%>
+
+
+</div>
+<div class="col-8 text-left">
+    
+    <h1 style="float: left; width: 50%;"><%=@account.username.capitalize%></h1>
+   <h1 style="float: right; width: 50%; text-align: right;"><a href="#" class="btn btn-outline-secondary" ><strong>Edit Profile</strong></a></h1>
+
+
+        <div class="profile-stats">0 posts</div>
+        <div class="profile-stats"> 0 <%= link_to "followers",  class: "text-dark" %></div>
+        <div class="profile-stats"> 0 <%= link_to "following",  class: "text-dark" %></div><br>
+        <p> <p><br>
+        <p> <%=@account.username%> </p>
+        <p> Bio: </p>
+       
+    
     </div>
-    </div>
-  <%end%>
-  </div>
-  </span>
+ </div>
+        
+
+
+
+   
+    <%@posts.each do |post|%>
+     
+       <%if post.image.attached?%>
+        <%= link_to post_path(post) do %>
+         <div class="hvrbox">
+          <h1 class="hvrbox-layer_bottom"> <h1 class="makingsure"><%= image_tag post.image%></h1></h1>
+             <div class="hvrbox-layer_top">
+             <div class="hvrbox-text"><span class="hoverspace"><i class="fas fa-heart"></i> 0 </span>  <span class="hoverspace"><i class="fas fa-comment"></i> 0 </span></div>
+             <%end%>
+            </div>
+         
+          <%end%>
+        
+       </div>
+     <%end%>
+
+
+     

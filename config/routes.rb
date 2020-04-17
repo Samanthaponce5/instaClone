@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :likes
   resources :comments
   root 'home#index'
 resources :sessions, only: [:new, :create, :destroy]
