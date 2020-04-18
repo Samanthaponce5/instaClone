@@ -28,25 +28,22 @@
  </span>
  
  <p class="border-top mt-3 py-2"><br>
-   <div class="card-columns">
-    <div class="thumb1">
+
       <%@posts.each do |post|%>
-        <div class="card">
-           <div class="card-body p-1">
+    
               <%if post.image.attached?%>
               <div class="hvrbox">
                 <%= link_to post_path(post) do %>                 
-                  <h1 class="hvrbox-layer_bottom"> <%= image_tag url_for(post.image), class: 'd-block w-100'%></h1>             
+                  <h1 class="hvrbox-layer_bottom"> <h1 class="makingsure"><%= image_tag url_for(post.image)%></h1></h1>             
                    <div class="hvrbox-layer_top">                 
-                    <div class="hvrbox-text"><span class="hoverspace"><i class="fas fa-heart"></i> 0 </span>  <span class="hoverspace"><i class="fas fa-comment"></i> 0 </span></div>
+                    <div class="hvrbox-text"><span class="hoverspace"><i class="fa fa-heart"></i>&nbsp0 </span>  <span class="hoverspace"><i class="fa fa-comment"></i> 0 </span></div>
                    <%end%>
-                  </div>
+                 
                 </div>
               <%end%>
-           </div>
         </div>
+      
       <%end%>
-   </div>
-</div>
+  
 
     

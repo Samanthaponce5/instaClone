@@ -25,6 +25,14 @@ def create
         @account =  Account.find(params[:id])
         @posts = @account.posts
     end
+
+    def destroy
+        @account = Account.find(params[:id])
+        @post = @account.posts.each do |post|
+            post.destroy
+        end
+    end
+
 private
 def account_params
     params.require(:account).permit!

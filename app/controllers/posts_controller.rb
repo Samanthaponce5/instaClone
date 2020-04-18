@@ -23,7 +23,13 @@ class PostsController < ApplicationController
         @post = Post.new
     end
 
-
+    def destroy
+        @post = Post.find(params[:id])
+        if @post.present?
+        @post.destroy
+        redirect_to profile_path(current_user)
+        end
+    end
    
 
     private

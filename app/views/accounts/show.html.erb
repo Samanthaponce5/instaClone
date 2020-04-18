@@ -28,7 +28,7 @@
 
 
 
-   
+ <p class="border-top mt-3 py-2"><br>
     <%@posts.each do |post|%>
      
        <%if post.image.attached?%>
@@ -36,12 +36,13 @@
          <div class="hvrbox">
           <h1 class="hvrbox-layer_bottom"> <h1 class="makingsure"><%= image_tag post.image%></h1></h1>
              <div class="hvrbox-layer_top">
-             <div class="hvrbox-text"><span class="hoverspace"><i class="fas fa-heart"></i> 0 </span>  <span class="hoverspace"><i class="fas fa-comment"></i> 0 </span></div>
+             <div class="hvrbox-text"><span class="hoverspace"><i class="fa fa-heart"></i>&nbsp 0 </span>  <span class="hoverspace"><i class="fa fa-comment"></i> 0 </span></div>
              <%end%>
+            
             </div>
          
           <%end%>
-        
+          
        </div>
      <%end%>
 

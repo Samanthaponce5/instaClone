@@ -14,32 +14,36 @@
  *= require_self
  */
 
- @import 'bootstrap-sprockets';
- @import "bootstrap";
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
 
-
- a.navbar-brand {
-    padding: 15px 15px;
-    font-size: 20px;
-    line-height: 20px;
-
+a.navbar-brand {
+	padding-left: 50px;
+	padding: 15px 15px;
+	font-size: 20px;
+	line-height: 20px;
+	margin-left: 200px;
 }
 
- a.nav-link {
-    padding: 15px;
-   margin: 0px 10px 0px-15px;
-    font-size: 15px;
-   
+a.nav-link {
+	padding: 15px;
+	margin: 0px 10px 0px-15px;
+	font-size: 18px;
+}
+.navbar {
+	background-color: white;
+	border-bottom: 1px solid rgb(211, 211, 211);
 }
 
-input.form-control {
-    font-size: 14px;
-    font-weight: 300;
+.navbar-nav {
+	margin-right: 250px;
 }
 
-
-
-
-
-
-
+.form-control.search {
+	position: absolute;
+	left: 620px;
+	width: 150px;
+	height: 30px;
+    text-align: center;
+    
+}
