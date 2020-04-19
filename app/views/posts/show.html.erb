@@ -1,14 +1,19 @@
 new post
 <div class="text-center" >
-<p><%= link_to @post.account.username, visit_path(@post.account) %></p>
+<p><%= link_to @post.account.username, visit_path(@post.account.username) %></p>
 <%if @post.image.attached?%>
 <%= image_tag url_for(@post.image),class:"w-50 p-3"%>
 
 <%end%>
 <%=link_to "comment", new_post_comment_path(@post.id)%>
 <%@post.comments.each do |c|%>
+    <%=link_to c.account.username%>
    <p><%=c.comment%></p>
+   <%if c.account_id == current_user.id%>
+    <%= link_to 'x', post_comment_path(@post,c), method: :delete%>
     <%end%>
+    <%end%>
+
 <%if @post.account_id == current_user.id%>
 <%=link_to 'delete',post_path, method: :delete%>
 <%end%>
