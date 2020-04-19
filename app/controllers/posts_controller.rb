@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
 
     def index
-       @posts = Post.all
+        @posts = Post.of_followed_accounts(current_user.following).order('created_at DESC')
   
     end
 
