@@ -23,7 +23,7 @@ def create
         @comment = @account.comments
     end
     def visit
-        @account =  Account.find(params[:id])
+        @account =  Account.find_by(username:params[:username])
         @posts = @account.posts
     end
 
