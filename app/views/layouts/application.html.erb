@@ -16,6 +16,8 @@
      <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
      <%= javascript_pack_tag "application", "data-turbolinks-track": "reload" %>
 
+
+
      <!-- Bootstrap jquery -->
      <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
@@ -27,7 +29,8 @@
 
      <!-- NavBar -->
   <body>
-   <nav class="navbar fixed-top navbar-light navbar-expand-lg navbar-template">
+  <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+ 
     <a class="navbar-brand" href="#"><i class="fa fa-diamond"></i>IɴsᴛᴀRᴀɪʟs</a>
       <%if current_user%>
        <div class="d-flex flex-row order-2 order-lg-3">
@@ -50,7 +53,8 @@
      </div>
    </nav>
 
-     <div class="container">
+   <div class="container">
+    
        <%=yield %>
      </div>
   </body>

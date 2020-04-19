@@ -3,8 +3,18 @@ new post
 <p><%= link_to @post.account.username, visit_path(@post.account) %></p>
 <%if @post.image.attached?%>
 <%= image_tag url_for(@post.image),class:"w-50 p-3"%>
+
 <%end%>
+<%=link_to "comment", new_post_comment_path(@post.id)%>
+<%@post.comments.each do |c|%>
+   <p><%=c.comment%></p>
+    <%end%>
 <%if @post.account_id == current_user.id%>
 <%=link_to 'delete',post_path, method: :delete%>
 <%end%>
+
+<!-- Heart -->
+<span id = heart><i class="fa fa-heart-o" aria-hidden="true" ></i> </span>
+
+
 </div>
